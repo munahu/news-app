@@ -1,11 +1,10 @@
 function Article(props) {
-    console.log(props);
     return (
         <div>
-            <img src={props.article.urlToImage} alt=""/>
+            <img src={props.article.urlToImage} alt={props.article.title}/>
             <p>{props.article.title}</p>
             <p>{props.article.description}</p>
-        </div>   
+        </div>
     )
 }
 

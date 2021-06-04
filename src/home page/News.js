@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import useFetchData from "../useFetchData";
-import Article from "./Article";
+import LatestNews from "./LatestNews";
 
 function News() {
     const apiKey = process.env.REACT_APP_NEWS_API_KEY;
     const news = 
         useFetchData(`https://newsapi.org/v2/top-headlines?country=ca&apiKey=${apiKey}`);
         
-    const [articles, setArticles] = useState([]);
+    const [topArticle, setTopArticle] = useState({});
+    const [featuredArticles, setFeaturedArticles] = useState([]);
+    const [latestArticles, setLatestArticles] = useState([]);
     
     useEffect(() => {
         if (news.length > 0) {
@@ -25,32 +26,17 @@ function News() {
                     };
                 });
                 articles.length = 12;
-                setArticles(articles);
+                setTopArticle(articles.splice(0, 1));
+                setFeaturedArticles(articles.splice(0, 2));
+                setLatestArticles(articles);
             }
             cleanUp();
         }
     }, [news])
     
-    const [articleComponents, setArticleComponents] = useState([]);
-    
-    useEffect(() => {
-        const displayArticles = () => {
-            const articleComponents = articles.map((article) => {
-                return <Article key={uuidv4()} article={article} />;
-            });
-            
-            setArticleComponents(articleComponents);
-        }
-        displayArticles();
-        
-    }, [articles])
-    
-    
-    
-    
     return (
         <div>
-            {articleComponents}
+            <LatestNews articles={latestArticles}/>
         </div>
     )
 }
