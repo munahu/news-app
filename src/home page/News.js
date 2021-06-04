@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import useFetchData from "../useFetchData";
 import LatestNews from "./LatestNews";
+import FeaturedNews from "./FeaturedNews";
+import TopArticle from "./TopArticle";
 
 function News() {
     const apiKey = process.env.REACT_APP_NEWS_API_KEY;
@@ -37,6 +39,8 @@ function News() {
     return (
         <div>
             <LatestNews articles={latestArticles}/>
+            <TopArticle article={topArticle}/>
+            <FeaturedNews articles={featuredArticles}/>
         </div>
     )
 }
