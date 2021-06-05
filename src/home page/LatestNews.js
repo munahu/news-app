@@ -74,39 +74,3 @@ function LatestNews(props) {
 }
 
 export default LatestNews
-
-// function LatestNews(props) {
-    
-//     const [articleComponents, setArticleComponents] = useState([]);
-    
-//     useEffect(() => {
-//         const displayArticles = () => {
-            
-//             const articleComponents = props.articles.map((article) => {
-//                 return (
-//                     <Article 
-//                         key={uuidv4()}
-//                         article={article}
-//                         articleClassName={styles.article}
-//                         imgClassName={styles.image}
-//                         titleClassName={styles.title}
-//                         descriptionClassName={styles.description}
-//                         sourceClassName={styles.source} />
-//                 )
-//             });
-
-//             setArticleComponents(articleComponents);
-//         }
-//         displayArticles();
-
-//     }, [props.articles])
-    
-//     return (
-//         <div className={styles.section}>
-//             {articleComponents}
-//         </div>
-//     )
-    
-// }
-
-// export default LatestNews

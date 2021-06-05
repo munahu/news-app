@@ -35,11 +35,6 @@
         letter-spacing: 0.4px;
         font-weight: 600;
     }
-    
-    .description, 
-    .source {
-        display: none;
-    }
 }
 
 @media (min-width: 640px) {
@@ -62,6 +57,13 @@
         object-fit: cover;
     }
     
+    .title,
+    .description, 
+    .source {
+        display: block;
+        margin-left: 13px;
+    }
+    
     .title {
         margin: 0;
         font-size: 1.3rem;
@@ -81,12 +83,6 @@
         font-size: 0.8rem;
     }
     
-    .title,
-    .description, 
-    .source {
-        display: block;
-        margin-left: 13px;
-    }
 }
 
 @media (min-width: 1023px) {
