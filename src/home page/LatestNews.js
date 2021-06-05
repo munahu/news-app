@@ -5,14 +5,18 @@ import styles from "./styles/LatestNews.module.css";
 
 
 function LatestNews(props) {
-    // console.log(props);
-    const [articleComponents, setArticleComponents] = useState([]);
     
+    const [topComponents, setTopComponents] = useState([]);
+    const [bottomComponents, setBottomComponents] = useState([]);
+
     useEffect(() => {
+        const top = props.articles.splice(0,5);
+        const bottom = props.articles;
+        
         const displayArticles = () => {
-            const articleComponents = props.articles.map((article) => {
+            const topComponents = top.map((article) => {
                 return (
-                    <Article 
+                    <Article
                         key={uuidv4()}
                         article={article}
                         articleClassName={styles.article}
@@ -23,18 +27,86 @@ function LatestNews(props) {
                 )
             });
 
-            setArticleComponents(articleComponents);
+            setTopComponents(topComponents);
+            
+            const bottomComponents = bottom.map((article) => {
+                return (
+                    <Article
+                        key={uuidv4()}
+                        article={article}
+                        articleClassName={styles.article}
+                        imgClassName={styles.image}
+                        titleClassName={styles.title}
+                        descriptionClassName={styles.description}
+                        sourceClassName={styles.source} />
+                )
+            });
+            
+            setBottomComponents(bottomComponents);
         }
+        
         displayArticles();
 
     }, [props.articles])
     
-    return (
-        <div className={styles.section}>
-            {articleComponents}
-        </div>
-    )
-    
+    if (window.screen.width < 1023) {
+        return (
+            <div className={styles.section}>
+                {topComponents}
+                {bottomComponents}
+            </div>
+        )
+    } else {
+        return (
+            <>
+                <div className={styles.section}>
+                    <span className={styles.heading}>Latest News</span>
+                    <div className={styles.articles}>
+                        {topComponents}
+                    </div>
+                </div>
+                <div className={styles.bottomSection}>
+                    {bottomComponents}
+                </div>
+            </>
+        )
+    }
 }
 
 export default LatestNews
+
+// function LatestNews(props) {
+    
+//     const [articleComponents, setArticleComponents] = useState([]);
+    
+//     useEffect(() => {
+//         const displayArticles = () => {
+            
+//             const articleComponents = props.articles.map((article) => {
+//                 return (
+//                     <Article 
+//                         key={uuidv4()}
+//                         article={article}
+//                         articleClassName={styles.article}
+//                         imgClassName={styles.image}
+//                         titleClassName={styles.title}
+//                         descriptionClassName={styles.description}
+//                         sourceClassName={styles.source} />
+//                 )
+//             });
+
+//             setArticleComponents(articleComponents);
+//         }
+//         displayArticles();
+
+//     }, [props.articles])
+    
+//     return (
+//         <div className={styles.section}>
+//             {articleComponents}
+//         </div>
+//     )
+    
+// }
+
+// export default LatestNews

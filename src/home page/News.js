@@ -31,10 +31,10 @@ function News() {
                     };
                 });
                 articles.length = 12;
+                localStorage.setItem("news", JSON.stringify(articles));
                 setTopArticle(articles.splice(0, 1)[0]);
                 setFeaturedArticles(articles.splice(0, 2));
                 setLatestArticles(articles);
-                localStorage.setItem("news", JSON.stringify(articles));
             }
             cleanUp();
         }
