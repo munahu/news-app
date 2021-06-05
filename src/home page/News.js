@@ -3,6 +3,7 @@ import useFetchData from "../useFetchData";
 import LatestNews from "./LatestNews";
 import FeaturedNews from "./FeaturedNews";
 import TopArticle from "./TopArticle";
+import styles from "./styles/News.module.css";
 
 function News() {
     const apiKey = process.env.REACT_APP_NEWS_API_KEY;
@@ -18,26 +19,34 @@ function News() {
             const cleanUp = () => {
                 const articles = [];
                 news.forEach(article => {
+                    article.title = removeSourceFromTitle(article);
+                    article.source = article.source.name;
                     if (
                         article.urlToImage
                         && article.title
                         && article.description
-                        && article.source.name
+                        && article.source
                         && article.content) {
                             articles.push(article);
                     };
                 });
                 articles.length = 12;
-                setTopArticle(articles.splice(0, 1));
+                setTopArticle(articles.splice(0, 1)[0]);
                 setFeaturedArticles(articles.splice(0, 2));
                 setLatestArticles(articles);
+                localStorage.setItem("news", JSON.stringify(articles));
             }
             cleanUp();
         }
     }, [news])
     
+    const removeSourceFromTitle = (article) => {
+        const title = article.title.split(" - ")[0];
+        return title;
+    }  
+    
     return (
-        <div>
+        <div className={styles.news}>
             <LatestNews articles={latestArticles}/>
             <TopArticle article={topArticle}/>
             <FeaturedNews articles={featuredArticles}/>

@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 import Article from "./Article";
+import styles from "./styles/FeaturedNews.module.css";
 
 
 function FeaturedNews(props) {
@@ -9,7 +10,16 @@ function FeaturedNews(props) {
     useEffect(() => {
         const displayArticles = () => {
             const articleComponents = props.articles.map((article) => {
-                return <Article key={uuidv4()} article={article} />;
+                return (
+                    <Article
+                        key={uuidv4()}
+                        article={article}
+                        articleClassName={styles.article}
+                        imgClassName={styles.image}
+                        titleClassName={styles.title}
+                        descriptionClassName={styles.description}
+                        sourceClassName={styles.source} />
+                )
             });
 
             setArticleComponents(articleComponents);
@@ -18,7 +28,11 @@ function FeaturedNews(props) {
 
     }, [props.articles])
 
-    return articleComponents;
+    return (
+        <div className={styles.section}>
+            {articleComponents}
+        </div>
+    )
 
 }
 

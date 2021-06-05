@@ -1,0 +1,19 @@
+.App {
+    font-family: 'General Sans', sans-serif;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+@media(max-width: 640px) {
+    .wrapper {
+        width: 90vw;
+    }
+}
+
+@media(min-width: 640px) {
+    .wrapper {
+        width: 95vw;
+    }
+}
