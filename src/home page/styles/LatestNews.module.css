@@ -1,5 +1,13 @@
-.heading {
+.heading,
+.description,
+.source {
     display: none;
+}
+
+.source {
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    color: rgb(57, 57, 58);
 }
 
 @media (max-width: 640px) {
@@ -57,33 +65,34 @@
         object-fit: cover;
     }
     
-    .title,
-    .description, 
-    .source {
-        display: block;
-        margin-left: 13px;
-    }
-    
     .title {
-        margin: 0;
         font-size: 1.3rem;
         letter-spacing: 0.4px;
         font-weight: 600;
+        margin: 0;
+        margin-bottom: 0.5em;
     }
     
     .description {
-        margin: 0.5em 0;
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.6em;
         letter-spacing: 0.4px;
         color: rgb(66, 66, 66);
     }
     
     .source {
-        font-size: 0.8rem;
+        margin: 1em 0;
+        font-size: 0.9rem;
     }
     
+    .title,
+    .description, 
+    .source {
+        display: block;
+        margin-left: 15px;
+    }
 }
+
 
 @media (min-width: 1023px) {
     .section {
@@ -100,13 +109,13 @@
         color: rgb(217, 0, 0);
     }
     
-    .articles {
+    .section .articles {
         margin-top: 1.2em;
     }
     
-    .title {
+    .section .title {
         margin: 0;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .section .image,
@@ -142,7 +151,7 @@
     
     .bottomSection .description {
         margin: 0.5em 0;
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.6em;
         letter-spacing: 0.4px;
         color: rgb(66, 66, 66);
@@ -157,6 +166,6 @@
     .bottomSection .description, 
     .bottomSection .source {
         display: block;
-        margin-left: 13px;
+        margin-left: 15px;
     }
 }
