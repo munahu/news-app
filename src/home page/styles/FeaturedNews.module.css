@@ -1,3 +1,15 @@
+.image {
+    object-fit: cover;
+}
+
+.title {
+    margin-left: 0.6em;
+    margin-bottom: 0.7em;
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+}
+
 @media (max-width: 640px) {
     .section {
         max-width: 500px;
@@ -13,7 +25,6 @@
     .image {
         max-width: 170px;
         width: 50%;
-        object-fit: cover;
     }
     
     .title {
@@ -23,12 +34,8 @@
         display: -webkit-box;
         -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
-        margin: 0;
         margin-left: 0.6em;
         margin-bottom: 0.7em;
-        font-size: 1rem;
-        letter-spacing: 0.4px;
-        font-weight: 600;
     }
     
     .description, 
@@ -50,15 +57,8 @@
         margin-bottom: 6em;
     }
     
-    .image {
-        object-fit: cover;
-    }
-    
     .title {
-        margin: 0;
         margin-top: 0.5em;
-        letter-spacing: 0.4px;
-        font-weight: 600;
     }
     
     .description, 
