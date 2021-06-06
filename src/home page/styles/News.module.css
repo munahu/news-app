@@ -8,7 +8,6 @@ a {
     position: relative;
 }
 
-
 @media (max-width: 640px) {
     .news {
         flex-direction: column;

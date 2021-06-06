@@ -1,0 +1,25 @@
+.list {
+    background: rgb(10, 10, 10);
+    width: 100%;
+    display: flex;
+    padding: 0.7em 0;
+    padding-left: 2em;
+    margin: 0;
+    margin-bottom: 2em;
+}
+
+.category {
+    color: white;
+    list-style: none;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+.list a {
+    margin-right: 1.5em;
+}
+
+.isActive {
+    border-bottom: 3.5px solid red;
+    padding-bottom: 2px;
+}
