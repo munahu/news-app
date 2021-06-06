@@ -23,3 +23,10 @@
     border-bottom: 3.5px solid red;
     padding-bottom: 2px;
 }
+
+@media (max-width: 640px) {
+    .list {
+        padding-left: 1em;
+        overflow-x: scroll;
+    }
+}

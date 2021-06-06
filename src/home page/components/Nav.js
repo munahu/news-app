@@ -5,6 +5,9 @@ function Nav() {
     return (
       <nav>
         <ul className={styles.list}>
+          <NavLink to="/">
+            <li className={styles.category}>Home</li>
+          </NavLink>
           <NavLink to="/business" activeClassName={styles.isActive}>
             <li className={styles.category}>Business</li>
           </NavLink>
