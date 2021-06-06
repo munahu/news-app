@@ -48,17 +48,19 @@
 @media (min-width: 640px) {
     .bottomSection,
     .section {
-        padding-top: 1em;
         order: 3;
+    }
+    
+    .bottomSection {
+        margin-top: 4em;
     }
     
     .article {
         display: flex;
-        padding-bottom: 1em;
-        margin-bottom: 1em;
-        border-bottom: 1px dashed black;
+        padding-top: 1em;
+        margin-top: 1em;
+        border-top: 1px dashed black;
     }
-
     
     .image {
         width: 50%;
@@ -126,14 +128,14 @@
     
     .bottomSection {
         order: 4;
-        width: 80%;
+        width: 65%;
     }
     
     .bottomSection .article {
         display: flex;
         margin: 1em 0;
         padding: 1em 0;
-        border-bottom: 1px dashed black;
+        border-top: 1px dashed black;
     }
     
     .bottomSection .image {

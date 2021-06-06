@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 import Article from "./Article";
-import styles from "./styles/LatestNews.module.css";
+import styles from "../styles/LatestNews.module.css";
 
 
 function LatestNews(props) {
@@ -20,12 +20,14 @@ function LatestNews(props) {
                         key={uuidv4()}
                         article={article}
                         articleClassName={styles.article}
-                        imgClassName={styles.image}
+                        imageContainerClassName={styles.imageContainer}
+                        imageClassName={styles.image}
                         titleClassName={styles.title}
                         descriptionClassName={styles.description}
                         sourceClassName={styles.source} />
                 )
             });
+
             setTopComponents(topComponents);
             
             const bottomComponents = bottom.map((article) => {
