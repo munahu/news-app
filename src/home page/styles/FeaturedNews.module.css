@@ -1,13 +1,22 @@
 .image {
     object-fit: cover;
+    width: 100%;
+}
+
+.textContainer {
+    margin-left: 0.6em;
 }
 
 .title {
-    margin-left: 0.6em;
     margin-bottom: 0.7em;
     font-size: 1rem;
     letter-spacing: 0.4px;
     font-weight: 600;
+}
+
+.article:hover .title {
+    text-decoration: 2px underline black;
+    opacity: 0.7;
 }
 
 @media (max-width: 640px) {
@@ -22,8 +31,11 @@
         margin-bottom: 1.5em;
     }
     
-    .image {
-        max-width: 170px;
+    .imageContainer {
+        width: 50%;
+    }
+    
+    .textContainer {
         width: 50%;
     }
     
@@ -34,7 +46,6 @@
         display: -webkit-box;
         -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
-        margin-left: 0.6em;
         margin-bottom: 0.7em;
     }
     
@@ -52,9 +63,12 @@
     }
     
     .article {
-        height: 10em;
         display: flex;
-        margin-bottom: 6em;
+        margin-bottom: 3em;
+    }
+    
+    .imageContainer {
+        width: 100%;
     }
     
     .title {
@@ -67,14 +81,12 @@
     }
     
     .article:nth-of-type(1) {
-        width: 100%;
         flex-direction: column;
     }
-    
-    .article:nth-of-type(1) .image {
-        width: 100%;
-        height: 100%;
-    }
+
+     .article:nth-of-type(1) .textContainer {
+         margin-top: 0.5em;
+     }
     
     .article:nth-of-type(1) .title {
        padding: 0 0.3em;
@@ -82,15 +94,9 @@
        line-height: 1.1em;
     }
     
-    .article:nth-of-type(2) .image {
-        height: 45%;
-        width: 45%;
-    }
-    
-    .article:nth-of-type(2) .title {
-        margin-left: 0.8em;
-        margin-top: 0;
-        font-size: 1rem;
+    .article:nth-of-type(2) .imageContainer {
+        width: 100%;
+        max-width: 150px;
     }
 }
 

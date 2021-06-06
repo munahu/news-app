@@ -1,11 +1,15 @@
 .image {
+    margin-bottom: 0.8em;
     width: 100%;
+}
+
+.textContainer {
+    padding-left: 0.5em;
+    cursor: pointer;
 }
 
 .title {
     font-weight: bold;
-    margin: 0;
-    margin-top: 0.5em;
 }
 
 .description {
@@ -16,9 +20,14 @@
 }
 
 .source {
-    font-weight: 600;
     color: rgb(29, 29, 29);
+    font-weight: 600;
     letter-spacing: 0.7px;
+}
+
+.article:hover .title {
+    text-decoration: 6px underline black;
+    opacity: 0.7;
 }
 
 @media (max-width: 640px ) {
@@ -55,7 +64,7 @@
     }
     
     .title {
-        font-size: 2.3em;
+        font-size: 2.7em;
         line-height: 1.1em;
     }
     

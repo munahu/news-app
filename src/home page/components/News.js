@@ -55,8 +55,8 @@ function News() {
     return (
         <div className={styles.news}>
             <LatestNews articles={latestArticles}/>
-            <TopArticle article={topArticle}/>
             <FeaturedNews articles={featuredArticles}/>
+            <TopArticle article={topArticle}/>
         </div>
     )
 }

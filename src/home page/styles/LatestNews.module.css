@@ -1,18 +1,38 @@
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .heading,
-.description,
+.title,
 .source {
-    display: none;
+    font-weight: 600;
+}
+
+.title,
+.description {
+    letter-spacing: 0.4px;
+}
+
+.description {
+    color: rgb(66, 66, 66);
+    font-size: 1rem;
 }
 
 .source {
-    font-weight: 600;
     letter-spacing: 0.8px;
     color: rgb(57, 57, 58);
 }
 
+.article:hover .title {
+    text-decoration: 2px underline black;
+    opacity: 0.7;
+}
+
 @media (max-width: 640px) {
-    .bottomSection,
-    .section {
+    .section,
+    .bottomSection {
         max-width: 500px;
         order: 2;
     }
@@ -23,12 +43,14 @@
         margin-bottom: 1.5em;
     }
     
-    .image {
-        max-width: 170px;
+    .imageContainer {
         width: 50%;
-        object-fit: cover;
     }
     
+    .textContainer {
+        width: 50%;
+    }
+
     .title {
         height: 130px;
         overflow: hidden;
@@ -40,14 +62,18 @@
         margin-left: 0.6em;
         margin-bottom: 0.7em;
         font-size: 1rem;
-        letter-spacing: 0.4px;
-        font-weight: 600;
+    }
+    
+    .heading,
+    .description,
+    .source {
+        display: none;
     }
 }
 
 @media (min-width: 640px) {
-    .bottomSection,
-    .section {
+    .section,
+    .bottomSection {
         order: 3;
     }
     
@@ -62,24 +88,23 @@
         border-top: 1px dashed black;
     }
     
-    .image {
+    .imageContainer {
         width: 50%;
-        object-fit: cover;
     }
     
+    .textContainer {
+        width: 50%;
+    }
+    
+
     .title {
         font-size: 1.3rem;
-        letter-spacing: 0.4px;
-        font-weight: 600;
         margin: 0;
         margin-bottom: 0.5em;
     }
     
     .description {
-        font-size: 1rem;
         line-height: 1.6em;
-        letter-spacing: 0.4px;
-        color: rgb(66, 66, 66);
     }
     
     .source {
@@ -106,7 +131,6 @@
         display: block;
         font-size: 1.1rem;
         text-transform: uppercase;
-        font-weight: 600;
         letter-spacing: 0.5px;
         color: rgb(217, 0, 0);
     }
@@ -120,10 +144,15 @@
         font-size: 1rem;
     }
     
+    .section .imageContainer,
     .section .image,
     .section .description,
     .section .source {
         display: none;
+    }
+    
+    .section .textContainer {
+        width: 100%;
     }
     
     .bottomSection {
@@ -138,16 +167,9 @@
         border-top: 1px dashed black;
     }
     
-    .bottomSection .image {
-        display: block;
-        width: 50%;
-        object-fit: cover;
-    }
-    
     .bottomSection .title {
         margin: 0;
         font-size: 1.5rem;
-        letter-spacing: 0.4px;
         font-weight: 600;
     }
     
@@ -155,8 +177,6 @@
         margin: 0.5em 0;
         font-size: 1rem;
         line-height: 1.6em;
-        letter-spacing: 0.4px;
-        color: rgb(66, 66, 66);
     }
     
     .bottomSection .source {

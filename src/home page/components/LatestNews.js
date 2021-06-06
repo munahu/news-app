@@ -20,6 +20,7 @@ function LatestNews(props) {
                         key={uuidv4()}
                         article={article}
                         articleClassName={styles.article}
+                        textContainer={styles.textContainer}
                         imageContainerClassName={styles.imageContainer}
                         imageClassName={styles.image}
                         titleClassName={styles.title}
@@ -36,7 +37,9 @@ function LatestNews(props) {
                         key={uuidv4()}
                         article={article}
                         articleClassName={styles.article}
-                        imgClassName={styles.image}
+                        textContainer={styles.textContainer}
+                        imageContainerClassName={styles.imageContainer}
+                        imageClassName={styles.image}
                         titleClassName={styles.title}
                         descriptionClassName={styles.description}
                         sourceClassName={styles.source} />

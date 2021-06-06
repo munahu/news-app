@@ -15,8 +15,9 @@ function FeaturedNews(props) {
                     key={uuidv4()}
                     article={article}
                     articleClassName={styles.article}
-                    imgContainerClassName={styles.imgContainer}
-                    imgClassName={styles.image}
+                    imageContainerClassName={styles.imageContainer}
+                    imageClassName={styles.image}
+                    textContainer={styles.textContainer}
                     titleClassName={styles.title}
                     descriptionClassName={styles.description}
                     sourceClassName={styles.source}

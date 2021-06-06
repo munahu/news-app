@@ -11,8 +11,9 @@ function TopArticle(props) {
           <Article
             article={props.article}
             articleClassName={styles.article}
-            imgContainerClassName={styles.imgContainer}
-            imgClassName={styles.image}
+            imageContainerClassName={styles.imgContainer}
+            imageClassName={styles.image}
+            textContainer={styles.textContainer}
             titleClassName={styles.title}
             descriptionClassName={styles.description}
             sourceClassName={styles.source}

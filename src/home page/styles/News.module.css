@@ -1,9 +1,11 @@
 a {
-    color: rebeccapurple;
+    color: black;
+    text-decoration: none;
 }
 
 .news {
     display: flex;
+    position: relative;
 }
 
 
