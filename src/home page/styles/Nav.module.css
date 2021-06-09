@@ -1,6 +1,5 @@
 .list {
     border-bottom: 1px solid gainsboro;
-    width: 100%;
     display: flex;
     padding: 0.7em 0;
     padding-left: 2em;
@@ -19,13 +18,17 @@
 }
 
 .isActive {
-    border-bottom: 3.5px solid red;
+    border-bottom: 3.5px solid rgb(110, 7, 206);
     padding-bottom: 2px;
 }
 
 @media (max-width: 640px) {
     .list {
-        padding-left: 1em;
+        padding: 1em 0.7em;
         overflow-x: scroll;
+    }
+
+    .list a {
+        margin: 0 1.2em;
     }
 }

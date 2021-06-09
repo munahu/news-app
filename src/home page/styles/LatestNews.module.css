@@ -111,6 +111,10 @@
         margin: 1em 0;
         font-size: 0.9rem;
     }
+
+    .heading {
+        display: none;
+    }
     
     .title,
     .description, 
@@ -132,7 +136,7 @@
         font-size: 1.1rem;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        color: rgb(217, 0, 0);
+        color: rgb(110, 7, 206);
     }
     
     .section .articles {
