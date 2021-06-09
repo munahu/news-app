@@ -8,7 +8,7 @@ function useFetchData (url) {
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                url.includes("headlines") ? setData(data.articles): setData(data.sources);
+                setData(data.articles);
             } catch (error) {
                 console.log(error)
             }

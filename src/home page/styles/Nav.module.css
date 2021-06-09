@@ -1,5 +1,5 @@
 .list {
-    background: rgb(10, 10, 10);
+    border-bottom: 1px solid gainsboro;
     width: 100%;
     display: flex;
     padding: 0.7em 0;
@@ -9,7 +9,6 @@
 }
 
 .category {
-    color: white;
     list-style: none;
     font-size: 0.9rem;
     padding: 0;

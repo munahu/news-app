@@ -7,7 +7,7 @@ function Article(props) {
           target="_blank" rel="noreferrer">
             <img
               className={props.imageClassName}
-              src={props.article.urlToImage}
+              src={props.article.image}
               alt={props.article.title}
             />
         </a>

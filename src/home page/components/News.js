@@ -8,7 +8,7 @@ import styles from "../styles/News.module.css";
 function News() {    
     const apiKey = process.env.REACT_APP_NEWS_API_KEY;
     const news = 
-        useFetchData(`https://newsapi.org/v2/top-headlines?country=ca&apiKey=${apiKey}`);
+        useFetchData(`https://gnews.io/api/v4/top-headlines?country=us&token=${apiKey}`);
         
     const [topArticle, setTopArticle] = useState({});
     const [featuredArticles, setFeaturedArticles] = useState([]);
@@ -19,18 +19,15 @@ function News() {
             const cleanUp = () => {
                 const articles = [];
                 news.forEach(article => {
-                    article.title = removeSourceFromTitle(article);
                     article.source = article.source.name;
                     if (
-                        article.urlToImage
+                        article.image
                         && article.title
                         && article.description
-                        && article.source
-                        && article.content) {
+                        && article.source) {
                             articles.push(article);
                     };
                 });
-                articles.length = 12;
                 localStorage.setItem("news", JSON.stringify(articles));
                 setTopArticle(articles.splice(0, 1)[0]);
                 setFeaturedArticles(articles.splice(0, 2));
@@ -39,11 +36,6 @@ function News() {
             cleanUp();
         }
     }, [news])
-    
-    const removeSourceFromTitle = (article) => {
-        const title = article.title.split(" - ")[0];
-        return title;
-    }  
     
     return (
         <div className={styles.news}>
