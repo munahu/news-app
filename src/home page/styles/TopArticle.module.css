@@ -12,6 +12,10 @@
     font-weight: bold;
 }
 
+.article:hover .title {
+    text-decoration: 6px underline black;
+}
+
 .description {
     color: rgb(73, 73, 73);
     font-weight: 100;
@@ -23,11 +27,6 @@
     color: rgb(29, 29, 29);
     font-weight: 600;
     letter-spacing: 0.7px;
-}
-
-.article:hover .title {
-    text-decoration: 6px underline black;
-    opacity: 0.7;
 }
 
 @media (max-width: 640px ) {
@@ -61,6 +60,10 @@
         order: 1;
         flex-basis: 60%;
         margin-bottom: 1.5em;
+    }
+
+    .article:hover .title {
+        opacity: 0.7;
     }
     
     .title {

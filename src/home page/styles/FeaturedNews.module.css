@@ -15,8 +15,7 @@
 }
 
 .article:hover .title {
-    text-decoration: 2px underline black;
-    opacity: 0.7;
+    text-decoration: 6px underline black;
 }
 
 @media (max-width: 640px) {
@@ -47,6 +46,10 @@
         -webkit-line-clamp: 6;
         -webkit-box-orient: vertical;
         margin-bottom: 0.7em;
+    }
+
+    .article:hover .title {
+        opacity: 0.7;
     }
     
     .description, 
