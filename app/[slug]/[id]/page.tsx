@@ -31,10 +31,10 @@ export default function Page({
           src={article.urlToImage}
           width={1200}
           height={550}
-          className="h-full object-cover blur-[100px] brightness-50 absolute -z-10"
+          className="h-full object-cover blur-[300px] dark:brightness-50 absolute -z-10 opacity-15 dark:opacity-100"
         />
         <Layout heading={params.slug}>
-          <div className="relative h-screen">
+          <div className="relative">
             <MobileTextLayout
               title={article.title}
               description={article.description}
@@ -52,7 +52,7 @@ export default function Page({
                 <a
                   href={article.url}
                   target="_blank"
-                  className="flex items-center justify-center w-fit px-5 py-3 rounded-3xl text-sm font-light -tracking-[0.3px] bg-neutral-200 text-black"
+                  className="flex items-center justify-center w-fit px-5 py-3 rounded-3xl text-sm font-light -tracking-[0.3px] bg-lightBlack dark:bg-white text-white dark:text-darkBlack"
                 >
                   <span className="mr-1">Read full article</span>
                   <svg
@@ -110,7 +110,7 @@ function MobileTextLayout({
       <a
         href={url}
         target="_blank"
-        className="flex items-center justify-center w-fit px-5 py-3 rounded-3xl text-sm font-light -tracking-[0.3px] bg-neutral-200 text-black"
+        className="flex items-center justify-center w-fit px-5 py-3 rounded-3xl text-sm font-light -tracking-[0.3px]  bg-lightBlack dark:bg-white text-white dark:text-darkBlack"
       >
         <span className="mr-1">Read full article</span>
         <svg

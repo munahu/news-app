@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import ThemeProvider from "./components/ThemeProvider";
 export const metadata: Metadata = {
   title: "MH News",
   description: "Get the latest news.",
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-black text-white font-sans">{children}</body>
+      <ThemeProvider>{children}</ThemeProvider>
     </html>
   );
 }
