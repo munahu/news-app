@@ -13,15 +13,13 @@ interface Props {
 export default function Article({ article, categoryName }: Props) {
   const router = useRouter();
   const handleClick = () => {
-    const storedViewedArticles = localStorage.getItem("articles");
-    if (storedViewedArticles) {
-      const articlesViewed = JSON.parse(storedViewedArticles);
-      articlesViewed.push(article);
-      localStorage.setItem("articles", JSON.stringify(articlesViewed));
-    } else {
-      localStorage.setItem("articles", JSON.stringify([article]));
-    }
-    router.push(`/${categoryName}/${article.id}`);
+    const domain = new URL(article.url).host.replace(/^www\./, "");
+    const titleWords = article.title.split(" ");
+    const truncatedTitleWords = (
+      titleWords.length > 4 ? titleWords.splice(0, 4) : titleWords
+    ).join(" ");
+    const encodedTitle = encodeURIComponent(truncatedTitleWords);
+    router.push(`/${categoryName}/${encodedTitle}&domain=${domain}`);
   };
   return (
     <li className="group cursor-pointer" onClick={() => handleClick()}>

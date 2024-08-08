@@ -7,9 +7,9 @@ import { CategoryName, categoryNames } from "@/app/categories";
 export default async function Page({
   params,
 }: {
-  params: { slug: CategoryName };
+  params: { category: CategoryName };
 }) {
-  const categoryName = params.slug;
+  const categoryName = params.category;
   if (categoryNames.includes(categoryName)) {
     const articles = await fetchArticles(categoryName, "20");
 

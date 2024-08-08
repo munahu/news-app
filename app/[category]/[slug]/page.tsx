@@ -1,6 +1,4 @@
-"use client";
-
-import { ArticleStructure } from "@/app/actions";
+import { fetchArticle } from "@/app/actions";
 import Layout from "@/app/components/Layout";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -12,18 +10,18 @@ interface MobileTextLayoutProps {
   url: string;
 }
 
-export default function Page({
+export default async function Page({
   params,
 }: {
-  params: { id: string; slug: string };
+  params: { category: string; slug: string };
 }) {
-  const storedViewedArticles = String(localStorage.getItem("articles"));
-  const viewedArticles = JSON.parse(storedViewedArticles);
-  const article: ArticleStructure = viewedArticles.find(
-    (article: ArticleStructure) => article.id === params.id
-  );
+  const query = decodeURIComponent(params.slug).split("&domain=");
+  const title = query[0];
+  const domain = query[1];
 
-  if (article.id === params.id) {
+  const article = await fetchArticle(title, domain);
+
+  if (article) {
     return (
       <>
         <Image
@@ -33,7 +31,7 @@ export default function Page({
           height={550}
           className="h-full object-cover blur-[300px] dark:brightness-50 absolute -z-10 opacity-15 dark:opacity-100"
         />
-        <Layout heading={params.slug}>
+        <Layout heading={params.category}>
           <div className="relative">
             <MobileTextLayout
               title={article.title}
