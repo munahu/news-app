@@ -7,9 +7,9 @@ interface Props {
 
 export default function Layout({ children, heading }: Props) {
   return (
-    <div className="max-w-screen-2xl px-4 md:px-12">
+    <main className="max-w-screen-2xl px-4 md:px-12 mt-4 m-auto">
       <Nav heading={heading} />
-      <main className="mt-4">{children}</main>
-    </div>
+      <div>{children}</div>
+    </main>
   );
 }

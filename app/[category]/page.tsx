@@ -15,7 +15,7 @@ export default async function Page({
 
     return (
       <Layout heading={categoryName}>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 py-6">
           {articles.map((article, index) => (
             <Article
               key={index}
